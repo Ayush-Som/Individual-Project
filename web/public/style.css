@@ -1,0 +1,943 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+	background-color: #252525;
+	color: #fff;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+header h1 {
+	margin: 30px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	margin: 0 10px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+	color: #fcba03;
+}
+
+main {
+	margin: 125px 20px 20px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+main h2 {
+	font-size: 36px;
+	font-weight: 600;
+	color: #252525;
+	margin: 0;
+}
+
+main p {
+	font-size: 18px;
+	color: #777;
+	margin: 20px 0;
+}
+
+.button {
+	color: #ecf0f1;
+	font-size: 17px;
+	background-color: #e67e22;
+	border: 1px solid #f39c12;
+	border-radius: 5px;
+	padding: 10px;
+	box-shadow: 0px 6px 0px #d35400;
+	transition: all .1s;
+}
+
+.button:active {
+	box-shadow: 0px 2px 0px #d35400;
+	position: relative;
+	top: 2px;
+}
+
+footer {
+	background-color: #f7f7f7;
+	color: #777;
+	padding: 20px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+
+.author {
+	color: white;
+	text-align: right;
+}
+
+#img1 {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	animation: img_1 2s;
+	animation-iteration-count: infinite;
+
+}
+
+#img2 {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	animation: img_2 2s;
+	animation-iteration-count: infinite;
+}
+
+/* Animation of Images */
+@keyframes img_1 {
+	0% {
+		top: 0px;
+		left: 0px;
+	}
+
+	50% {
+		left: 200px;
+	}
+
+	100% {
+		left: 0px;
+	}
+}
+
+@keyframes img_2 {
+	0% {
+		top: 0px;
+		right: 0px;
+	}
+
+	50% {
+		top: 0px;
+		right: 200px;
+	}
+
+	100% {
+		top: 0px;
+		right: 0px;
+	}
+}
+
+
+/* Hover buttons CSS */
+.cards {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.cards .red {
+	background-color: #f43f5e;
+}
+
+.cards .blue {
+	background-color: #3b82f6;
+}
+
+.cards .green {
+	background-color: #22c55e;
+}
+
+.cards .card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100px;
+	width: 250px;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+	transition: 400ms;
+}
+
+.cards .card p.tip {
+	font-size: 1em;
+	font-weight: 700;
+}
+
+.cards .card p.second-text {
+	font-size: .7em;
+}
+
+.cards .card:hover {
+	transform: scale(1.1, 1.1);
+}
+
+.cards:hover>.card:not(:hover) {
+	opacity: 0.4;
+	transform: scale(0.9, 0.9);
+}
+
+.tip {
+	color: white;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.tip :hover {
+	background-color: #22c55e;
+}
+
+.second-text {
+	color: white;
+}
+
+
+/* Check Box CSS  */
+.checkbox {
+	display: none;
+}
+
+.slider {
+	width: 60px;
+	height: 30px;
+	background-color: lightgray;
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	border: 4px solid transparent;
+	transition: .3s;
+	box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+	cursor: pointer;
+}
+
+.slider::before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	transform: translateX(-30px);
+	border-radius: 20px;
+	transition: .3s;
+	box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked~.slider::before {
+	transform: translateX(30px);
+	box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked~.slider {
+	background-color: #2196F3;
+}
+
+.checkbox:active~.slider::before {
+	transform: translate(0);
+}
+
+.container1 {
+	display: inline-block;
+	width: 100%;
+	/* background-color: #fcba03; */
+	/* color: white; */
+}
+
+.container1 h1 {
+	background-color: #fcba03;
+	color: white;
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+/* SWITCH
+--------------------------------------------- */
+
+.container .origin {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 111;
+	width: 2px;
+	height: 2px;
+	margin: -1px 0 0 -1px;
+	background-color: #f50;
+}
+
+.de {
+	user-select: none;
+	position: relative;
+	width: 230px;
+	height: 230px;
+	border-radius: 100%;
+	box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+	background-color: transparent;
+}
+
+.de .den,
+.de .dene,
+.de .denem,
+.de .deneme,
+.de .light,
+.de .dot {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+.den {
+	position: relative;
+	width: 220px;
+	height: 220px;
+	margin: -110px 0 0 -110px;
+	border-radius: 100%;
+	box-shadow: inset 0 3px 10px rgba(0, 0, 0, .6), 0 2px 20px rgba(255, 255, 255, 1);
+	background: #888888;
+	background: -moz-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #888888), color-stop(100%, #333333));
+	background: -webkit-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+	background: -o-radial-gradient(center, ellipse cover, #888888 0%, #333333 100%);
+}
+
+.dene {
+	z-index: 4;
+	width: 140px;
+	height: 140px;
+	margin: -70px 0 0 -70px;
+	border-radius: 100%;
+	box-shadow: inset 0 2px 2px rgba(255, 255, 255, .4), 0 3px 13px rgba(0, 0, 0, .85);
+	background: #f2f6f5;
+	background: -moz-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f6f5), color-stop(100%, #cbd5d6));
+	background: -webkit-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+	background: -o-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+}
+
+.denem {
+	width: 120px;
+	height: 120px;
+	margin: -60px 0 0 -60px;
+	border-radius: 100%;
+	background: #cbd5d6;
+	background: -moz-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cbd5d6), color-stop(100%, #f2f6f5));
+	background: -webkit-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
+	background: -o-linear-gradient(top, #cbd5d6 0%, #f2f6f5 100%);
+}
+
+.deneme {
+	width: 100px;
+	height: 100px;
+	margin: -50px 0 0 -50px;
+	border-radius: 100%;
+	box-shadow: inset 0 2px 3px rgba(255, 255, 255, .6), 0 8px 20px rgba(0, 0, 0, .9);
+	background: #eef7f6;
+	background: -moz-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eef7f6), color-stop(100%, #8d989a));
+	background: -webkit-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
+	background: -o-linear-gradient(top, #eef7f6 0%, #8d989a 100%);
+}
+
+.den .switch {
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.den .switch label {
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 50%;
+	height: 70px;
+	margin-top: -35px;
+	transform-origin: 0% 50%;
+	-webkit-transform-origin: 0% 50%;
+	-o-transform-origin: 0% 50%;
+}
+
+.den .switch label:after {
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: 1px;
+	width: 100%;
+	height: 30px;
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den .switch label:before {
+	content: "";
+	position: absolute;
+	bottom: 6px;
+	left: 1px;
+	width: 100%;
+	height: 30px;
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den .switch label span {
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 100%;
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 70px;
+	text-align: center;
+	color: #eee;
+	text-shadow: 0 1px 0 #444;
+}
+
+.den .switch label:nth-child(1) {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.den .switch label:nth-child(1) span {
+	right: 2px;
+	font-size: 13px;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.den .switch label:nth-child(2) {
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den .switch label:nth-child(2) span {
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den .switch label:nth-child(3) {
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den .switch label:nth-child(3) span {
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den .switch label:nth-child(4) {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.den .switch label:nth-child(4) span {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.den .switch label:nth-child(5) {
+	transform: rotate(150deg);
+	-webkit-transform: rotate(150deg);
+	-o-transform: rotate(150deg);
+}
+
+.den .switch label:nth-child(5) span {
+	transform: rotate(-150deg);
+	-webkit-transform: rotate(-150deg);
+	-o-transform: rotate(-150deg);
+}
+
+.den .switch label:nth-child(6) {
+	transform: rotate(210deg);
+	-webkit-transform: rotate(210deg);
+	-o-transform: rotate(210deg);
+}
+
+.den .switch label:nth-child(6) span {
+	transform: rotate(-210deg);
+	-webkit-transform: rotate(-210deg);
+	-o-transform: rotate(-210deg);
+}
+
+.den .switch input {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* SWITCH LIGHT */
+
+.den .light {
+	z-index: 1;
+	width: 50%;
+	height: 100px;
+	margin-top: -50px;
+	transform-origin: 0% 50%;
+	-webkit-transform-origin: 0% 50%;
+	-o-transform-origin: 0% 50%;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	-o-transition: all .5s;
+}
+
+.den .light span {
+	opacity: .4;
+	position: absolute;
+	top: 0;
+	left: 15px;
+	width: 100px;
+	height: 100px;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(184, 163, 204, 1)), color-stop(42%, rgba(159, 197, 224, 0.42)), color-stop(72%, rgba(111, 113, 179, 0)), color-stop(100%, rgba(67, 34, 137, 0)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(184, 163, 204, 1) 0%, rgba(159, 197, 224, 0.42) 42%, rgba(111, 113, 179, 0) 72%, rgba(67, 34, 137, 0) 100%);
+}
+
+/* SWITCH LIGHT POSITION */
+
+.den #switch_off:checked~.light {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.den #switch_1:checked~.light {
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den #switch_2:checked~.light {
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den #switch_3:checked~.light {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.den #switch_4:checked~.light {
+	transform: rotate(150deg);
+	-webkit-transform: rotate(150deg);
+	-o-transform: rotate(150deg);
+}
+
+.den #switch_5:checked~.light {
+	transform: rotate(210deg);
+	-webkit-transform: rotate(210deg);
+	-o-transform: rotate(210deg);
+}
+
+/* SWITCH LIGHT */
+
+.den .dot {
+	z-index: 6;
+	width: 50%;
+	height: 12px;
+	margin-top: -6px;
+	transform-origin: 0% 50%;
+	-webkit-transform-origin: 0% 50%;
+	-o-transform-origin: 0% 50%;
+	transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+}
+
+.den .dot span {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	width: 12px;
+	height: 12px;
+	border-radius: 100%;
+	background: #dae2e4;
+	background: -moz-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dae2e4), color-stop(100%, #ecf5f4));
+	background: -webkit-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
+	background: -o-linear-gradient(top, #dae2e4 0%, #ecf5f4 100%);
+}
+
+/* SWITCH LIGHT POSITION */
+
+.den #switch_off:checked~.dot {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.den #switch_off:checked~.dot span {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.den #switch_1:checked~.dot {
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den #switch_1:checked~.dot span {
+	opacity: .9;
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den #switch_2:checked~.dot {
+	transform: rotate(30deg);
+	-webkit-transform: rotate(30deg);
+	-o-transform: rotate(30deg);
+}
+
+.den #switch_2:checked~.dot span {
+	opacity: .5;
+	transform: rotate(-30deg);
+	-webkit-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+}
+
+.den #switch_3:checked~.dot {
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+}
+
+.den #switch_3:checked~.dot span {
+	opacity: .4;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.den #switch_4:checked~.dot {
+	transform: rotate(150deg);
+	-webkit-transform: rotate(150deg);
+	-o-transform: rotate(150deg);
+}
+
+.den #switch_4:checked~.dot span {
+	opacity: .5;
+	transform: rotate(-150deg);
+	-webkit-transform: rotate(-150deg);
+	-o-transform: rotate(-150deg);
+}
+
+.den #switch_5:checked~.dot {
+	transform: rotate(210deg);
+	-webkit-transform: rotate(210deg);
+	-o-transform: rotate(210deg);
+}
+
+.den #switch_5:checked~.dot span {
+	opacity: .9;
+	transform: rotate(-210deg);
+	-webkit-transform: rotate(-210deg);
+	-o-transform: rotate(-210deg);
+}
+
+/* LINE */
+
+.den hr.line {
+	z-index: 1;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 0;
+	margin-top: -1px;
+	border-width: 1px 0;
+	border-style: solid;
+	border-top-color: #3c3d3f;
+	border-bottom-color: #666769;
+}
+
+.den hr.line:nth-child(1) {
+	transform: rotate(-60deg);
+	-webkit-transform: rotate(-60deg);
+	-o-transform: rotate(-60deg);
+}
+
+.den hr.line:nth-child(2) {
+	transform: rotate(60deg);
+	-webkit-transform: rotate(60deg);
+	-o-transform: rotate(60deg);
+}
+
+
+.l {
+	display: block;
+	margin-bottom: 1.5em;
+	font-size: 1em;
+}
+
+.l {
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 0.75em;
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
+	color: #fdea7b;
+	display: inline-flex;
+	align-items: center;
+	margin: auto;
+	padding: 0.15em;
+	width: 3em;
+	height: 1.5em;
+	transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.l:before,
+.l:after {
+	content: "";
+	display: block;
+}
+
+.l:before {
+	background-color: #d7d7d7;
+	border-radius: 50%;
+	width: 1.2em;
+	height: 1.2em;
+	transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	z-index: 1;
+}
+
+.l:after {
+	background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% / 50% 100%,
+		repeating-linear-gradient(90deg, #bbb 0, #bbb, #bbb 20%, #999 20%, #999 40%) 0 50% / 50% 100%,
+		radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
+	background-repeat: no-repeat;
+	border: 0.25em solid transparent;
+	border-left: 0.4em solid #d8d8d8;
+	border-right: 0 solid transparent;
+	transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+	transform: translateX(-22.5%);
+	transform-origin: 25% 50%;
+	width: 1.2em;
+	height: 1em;
+	box-sizing: border-box;
+}
+
+/* Checked */
+.l:checked {
+	background-color: rgba(0, 0, 0, 0.45);
+	box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
+}
+
+.l:checked:before {
+	background-color: currentColor;
+	transform: translateX(125%)
+}
+
+.l:checked:after {
+	border-left-color: currentColor;
+	transform: translateX(-2.5%) rotateY(180deg);
+}
+
+/* Other States */
+.l:focus {
+	/* Usually an anti-A11Y practice but set to remove an annoyance just for this demo */
+	outline: 0;
+}
+
+
+/* Switch starts here */
+.rocker {
+	display: inline-block;
+	position: relative;
+	/*
+	SIZE OF SWITCH
+	==============
+	All sizes are in em - therefore
+	changing the font-size here
+	will change the size of the switch.
+	See .rocker-small below as example.
+	*/
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: #888;
+	width: 7em;
+	height: 4em;
+	overflow: hidden;
+	border-bottom: 0.5em solid #eee;
+}
+
+.rocker-small {
+	font-size: 0.75em;
+	/* Sizes the switch */
+	margin: 1em;
+}
+
+.rocker::before {
+	content: "";
+	position: absolute;
+	top: 0.5em;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #999;
+	border: 0.5em solid #eee;
+	border-bottom: 0;
+}
+
+.rocker input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.switch-left,
+.switch-right {
+	cursor: pointer;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 2.5em;
+	width: 3em;
+	transition: 0.2s;
+	user-select: none;
+}
+
+.switch-left {
+	height: 2.4em;
+	width: 2.75em;
+	left: 0.85em;
+	bottom: 0.4em;
+	background-color: #ddd;
+	transform: rotate(15deg) skewX(15deg);
+}
+
+.switch-right {
+	right: 0.5em;
+	bottom: 0;
+	background-color: #bd5757;
+	color: #fff;
+}
+
+.switch-left::before,
+.switch-right::before {
+	content: "";
+	position: absolute;
+	width: 0.4em;
+	height: 2.45em;
+	bottom: -0.45em;
+	background-color: #ccc;
+	transform: skewY(-65deg);
+}
+
+.switch-left::before {
+	left: -0.4em;
+}
+
+.switch-right::before {
+	right: -0.375em;
+	background-color: transparent;
+	transform: skewY(65deg);
+}
+
+input:checked+.switch-left {
+	background-color: #0084d0;
+	color: #fff;
+	bottom: 0px;
+	left: 0.5em;
+	height: 2.5em;
+	width: 3em;
+	transform: rotate(0deg) skewX(0deg);
+}
+
+input:checked+.switch-left::before {
+	background-color: transparent;
+	width: 3.0833em;
+}
+
+input:checked+.switch-left+.switch-right {
+	background-color: #ddd;
+	color: #888;
+	bottom: 0.4em;
+	right: 0.8em;
+	height: 2.4em;
+	width: 2.75em;
+	transform: rotate(-15deg) skewX(-15deg);
+}
+
+input:checked+.switch-left+.switch-right::before {
+	background-color: #ccc;
+}
+
+/* Keyboard Users */
+input:focus+.switch-left {
+	color: #333;
+}
+
+input:checked:focus+.switch-left {
+	color: #fff;
+}
+
+input:focus+.switch-left+.switch-right {
+	color: #fff;
+}
+
+input:checked:focus+.switch-left+.switch-right {
+	color: #333;
+}

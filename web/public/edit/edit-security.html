@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <!-- Page content goes here -->
+    <div class="container">
+        <div class="container1">
+            <h1>Edit Security Devices</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Device</th>
+                        <th>Actions</th>
+                        <th>Edit Device</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="user"> 
+                        </td>
+                        <td>
+                            <label class="switch">
+                                <label class="rocker rocker-small">
+                                    <input type="checkbox" id="status">
+                                    <span class="switch-left">Open</span>
+                                    <span class="switch-right">lock</span>
+                                </label>
+                            </label>
+                        </td>
+                        <td>
+                            <button class="button" id="edit-security-device">Click Here</button>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Back Door</td>
+                        <td>
+                            <label class="switch">
+                                <label class="rocker rocker-small">
+                                    <input type="checkbox">
+                                    <span class="switch-left">Open</span>
+                                    <span class="switch-right">Lock</span>
+                                </label>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Window</td>
+                        <td>
+                            <label class="switch">
+                                <label class="rocker rocker-small">
+                                    <input type="checkbox">
+                                    <span class="switch-left">Open</span>
+                                    <span class="switch-right">Lock</span>
+                                </label>
+                            </label>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+</html>

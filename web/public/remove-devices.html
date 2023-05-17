@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Remove Devices - Smart Building IoT</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h1>Smart Building</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/add-devices">Add Devices</a></li>
+				<li><a href="/remove-devices">Remove Devices</a></li>
+				<li><a href="/edit-devices">Edit Devices</a></li>
+				<li><a href="/device-data">Device Data</a></li>
+				<li><a href="#">Charts</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<div class="container">
+			<div class="container1">
+				<h1>Remove Devices</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Devices</th>
+							<th>Type</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<input id="user" type="text"> 
+							</td>
+							<td>
+								<select id="type" name="type" required>
+									<option value="">--Select--</option>
+									<option value="light">Lighting</option>
+									<option value="air-conditioning">Air-Conditioning</option>
+									<option value="security">Security</option>
+								</select>
+							</td>
+							<td>
+								<button id="remove-device" class="button">Click Here</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+	</main>
+	<footer>&copy; 2023 Smart Building IoT</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</html>

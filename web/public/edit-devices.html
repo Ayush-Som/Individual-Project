@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Edit Devices - Smart Building IoT</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="app.js"></script>
+
+	</head>
+	<body>
+		<header>
+			<h1>Smart Building</h1>
+			<nav>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/add-devices">Add Devices</a></li>
+					<li><a href="/remove-devices">Remove Devices</a></li>
+					<li><a href="/edit-devices">Edit Devices</a></li>
+					<li><a href="/device-data">Device Data</a></li>
+					<li><a href="#">Charts</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<main>
+			<h1>Edit Devices</h1>
+<!-- 			
+			<form id="add-form">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" required>
+				
+				<label for="type">Type</label>
+				<select id="type" name="type" required>
+					<option value="">--Select--</option>
+					<option value="Lighting">Lighting</option>
+					<option value="Air-Conditioning">Air-Conditioning</option>
+					<option value="security">Security</option>
+				</select>
+				
+				<label for="status">Status</label>
+				<select id="status" name="status" required>
+					<option value="">--Select--</option>
+					<option value="On">On</option>
+					<option value="Off">Off</option>
+				</select>
+				
+				<button type="submit">Edit Device</button>
+			</form> -->
+
+			<div class="cards">
+				<div class="card red">
+					<a href="./edit-lighting" class="tip">Lighting</a>
+					<p class="second-text">Edit a Lighting device</p>
+				</div>
+				<div class="card blue">
+					<a href="./edit-air-conditioning" class="tip">Air-Conditioning</a>
+					<p class="second-text">Edit a Air-Conditioning device</p>
+				</div>
+				<div class="card green">
+					<a href="./edit-security" class="tip">Security</a>
+					<p class="second-text">Edit a Security device</p>
+				</div>
+			</div>
+
+		</main>
+	</body>
+</html>
